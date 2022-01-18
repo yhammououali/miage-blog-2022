@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <strong>C'est ma page d'accueil</strong>
+
+    {% for myData in data %}
+        {{ myData }}
+    {% endfor %}
+
+    {% if createdAt is defined %}
+        {{ createdAt|date('d/m/Y') }}
+    {% endif %}
+{% endblock %}

@@ -13,7 +13,15 @@ class HomepageController extends AbstractController
      */
     public function home(): Response
     {
-        return new Response('Homepage Page!');
+        $data = [
+            'title' => 'Tintin',
+            'description' => 'C\'est Tintin',
+        ];
+
+        return $this->render('homepage/homepage.html.twig', [
+            'data' => $data,
+            'createdAt' => new \DateTime(),
+        ]);
     }
 
     /**
